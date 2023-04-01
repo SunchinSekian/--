@@ -15,8 +15,10 @@ class QueueBlock:
 
 
 class Window:
-    def __init__(self) -> None:
+    def __init__(self, name: str, priority: int = 0) -> None:
         self.blocks = []
+        self.name = name
+        self.priority = priority
 
     def __len__(self):
         num = 0
@@ -32,5 +34,8 @@ class Canting:
     def __init__(self, num) -> None:
         self.windows = [Window(i) for i in range(num)]
 
+    def get_top_priority(self):
+        return max([i.priority for i in self.windows])
+
     def add_stdents(self, student: Students):
-        pass
+        a = randint(0,)
